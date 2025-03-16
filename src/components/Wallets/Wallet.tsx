@@ -158,7 +158,7 @@ const Wallet = () => {
                   <div
                     key={index}
                     onClick={() => handleModal(item)}
-                    className="flex items-center justify-between h-[2rem] border-customGray-main border-[1px] rounded-[10px] py-[1.5em] px-[0.4em] cursor-pointer"
+                    className="flex items-center justify-between h-[2rem] border-customGray-main border-[1px] rounded-[10px] py-[1.5em] px-[1.4em] cursor-pointer"
                   >
                     <div className="flex items-center gap-2">
                       <div className="h-[10px] w-[10px] bg-primary-light rounded-full"></div>
